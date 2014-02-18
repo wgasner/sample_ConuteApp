@@ -11,7 +11,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading)    { 'Conute' }
+    let(:heading)    { 'Save money, save time, meet new people' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
