@@ -80,4 +80,15 @@ SampleConuteapp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Disable Rails's static asset server (Apache or nginx will already do this)
+#config.serve_static_assets = false ####
+
+# Compress both stylesheets and JavaScripts
+#config.assets.compress = true   ####
+#config.assets.js_compressor  = :uglifier   ####
+#config.assets.css_compressor = :scss  ###
+
+#config.assets.compile = false  ###
+#config.assets.digest = true   ###
 end
