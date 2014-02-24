@@ -6,7 +6,7 @@ module SessionsHelper
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
   end
-###end
+
 
   def signed_in?
     !current_user.nil?
@@ -24,6 +24,13 @@ module SessionsHelper
   def current_user?(user)
     user == current_user
   end
+
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "please sign in"
+    end
+  end
   
  def sign_out
     current_user.update_attribute(:remember_token,
@@ -40,4 +47,4 @@ def redirect_back_or(default)
   def store_location
     session[:return_to] = request.url if request.get?
   end
-end###
+end
